@@ -1,0 +1,50 @@
+# 公共配置文件
+
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${ip}:3306/api?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    password: pyj200116
+    # 支持 swagger3
+  mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+#  文件上传
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+  # todo 需替换配置，然后取消注释
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 5000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #//当为true时：mybatis-plus会将Java对象的驼峰式命名的常量转成下划线的方式，再与数据库表列字段进行匹配，这样会造成错误。 此时需要利用@TableField注解指定常量在表中的列名。
+    #
+    #//当为false时：此时就需要数据库里每列都是下划线的命名方式。
+
+
+#  AI 配置
+yuapi:
+  client:
+    access-key: p6ylvdk26s4997a8znegtnyypfnqhsig
+    secret-key: na2pxpfdspe95bl4zfk6n91kqxi9o9il
+yunapi:
+  client:
+    access-key: yunjin
+    secret-key: abcdefgh
+
+
+ip: localhost
+

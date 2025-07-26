@@ -1,0 +1,9 @@
+# 公共配置文件
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+yunapi:
+  client:
+    access-key: yunjin
+    secret-key: abcdefgh
